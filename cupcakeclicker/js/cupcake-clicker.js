@@ -21,25 +21,19 @@ var compteur = 1;
 var costEgg = 10;
 var costMold = 50;
 var costMixer = 100;
-var plural;
 
-
-function convertPlural(nb) {
+function convertPlural(nb, word) {
     if (nb > 1) {
-        return 's';
+        return word + 's';
     }
     else {
-        return '';
+        return word;
     }
 }
 
-
-/*var mixer = 'mixer';*/
-
 function cook () {
     score += compteur;
-    plural = convertPlural(score);
-    nbCupcake.innerHTML = score + ' cupcake' + plural;
+    nbCupcake.innerHTML = score + ' ' + convertPlural(score, 'cupcake');
 }
 
 
@@ -49,9 +43,8 @@ function buyEgg() {
         score -= costEgg;
         costEgg *= 2;
         nbEggs += 1;
-        plural = convertPlural(nbEggs);
-        nbCupcake.innerHTML = score + ' cupcake' + plural;
-        nbEgg.innerHTML = nbEggs + ' egg' + plural;
+        nbCupcake.innerHTML = score + ' ' + convertPlural(score, 'cupcake');
+        nbEgg.innerHTML = nbEggs + ' ' + convertPlural(nbEggs, 'egg');
         priceEgg.innerHTML = 'cost ' + costEgg;
         ad.innerHTML = 'Congrats ! You bought another egg for ' + costEgg / 2 + '.';
     }
@@ -66,10 +59,9 @@ function buyMold() {
         score -= costMold;
         costMold *= 2;
         nbMolds += 1;
-        plural = convertPlural(nbMolds);
-        nbCupcake.innerHTML = score + ' cupcake' + plural;
+        nbCupcake.innerHTML = score + ' ' + convertPlural(score, 'cupcake');
         ad.innerHTML = 'Congrats ! You bought another cake mold for ' + costMold / 2 + '.';
-        nbMold.innerHTML = nbMolds + ' mold' + plural;
+        nbMold.innerHTML = nbMolds + ' ' + convertPlural(nbMolds, 'mold');
         priceMold.innerHTML = 'cost ' + costMold;
     }
     else {
@@ -83,9 +75,8 @@ function buyMixer() {
         score -= costMixer;
         costMixer *= 10;
         nbMixers += 1;
-        plural = convertPlural(nbMixers);
-        nbCupcake.innerHTML = score + ' cupcake' + plural;
-        nbMixer.innerHTML = nbMixers + ' electric mixer' + plural;
+        nbCupcake.innerHTML = score + ' ' + convertPlural(score, 'cupcake');
+        nbMixer.innerHTML = nbMixers + convertPlural(nbMixers, ' electric mixer');
         priceMixer.innerHTML = 'cost ' + costMixer;
         ad.innerHTML = 'Congrats ! You bought another electric mixer for ' + costMixer / 10 + '.';
     }
