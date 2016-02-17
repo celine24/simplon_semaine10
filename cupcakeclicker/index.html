@@ -4,13 +4,52 @@
     <meta charset="UTF-8">
     <title>Cupcake Clicker</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-       <button id="button">Cupcaker</button>
-       <button id="multiplicateur">Multiplicateur - prix : 50</button>
-       <button id="autoclick">Autoclicker - prix : 100</button>
-       <div id="affichage">0</div>
-
-       <script type="text/javascript" src="js/cupcake-clicker.js"></script>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="img/cupcake.png" alt="cupcake" />
+            </div>
+            <h1 class="header-title">Cupcake Factory</h1>
+        </header>
+        <main>
+            <div class="icons">
+                <div class="icon">
+                    <button id="cupcake"> <img src="img/cupcake2.png" alt="cupcake" /></button>
+                    <div class="stats">
+                        <p id="nbCupcake" class="ingredient">0 cupcake</p>
+                    </div>
+                </div>
+                <div class="icon">
+                    <button id="egg"> <img src="img/egg.png" alt="egg" /></button>
+                    <div class="stats">
+                        <p id="nbEgg" class="ingredient">1 egg</p>
+                        <p id="priceEgg" class="price">cost 10</p>
+                    </div>
+                </div>
+                <div class="icon">
+                    <button id="mold"><img src="img/plaque.png" alt="mold" /></button>
+                    <div class="stats">
+                        <p id="nbMold" class="ingredient">1 mold</p>
+                        <p id="priceMold" class="price">cost 50</p>
+                    </div>
+                </div>
+                <div class="icon">
+                    <button id="mixer"><img src="img/wisk.png" alt="electric mixer" /></button>
+                    <div class="stats">
+                        <p id="nbMixer" class="ingredient">1 electric mixer</p>
+                        <p id="priceMixer" class="price">cost 100</p>
+                    </div>
+                </div>
+            </div>
+            <div class="noticeboard">
+                <p id="ad">you can make your cupcakes, go !</p>
+            </div>
+        </main>
+       
+    </div>
+    <script type="text/javascript" src="js/cupcake-clicker.js"></script>
 </body>
 </html>
